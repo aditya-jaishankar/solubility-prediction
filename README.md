@@ -1,2 +1,6 @@
 # solubility-prediction
 Solubility prediction of organic molecules using convolutional neural networks on their molecular graphs
+
+In this project, we aim to make predictions of molecular solubility in water from the [AqSolDB](https://www.nature.com/articles/s41597-019-0151-1) dataset, which contains solubility data along with relevant features of nearly 10,000 molecules. As a proof of concept, we explore in this project if we can make solubility predictions based solely on images of polar charge density. This project was conceived with some domain knowledge in mind; water is a polar molecule, and is likely to dissolve other polar molecules, (i.e.) molecules that have significant polar charge density. The hypothesis is that if we draw maps of polar charge density of the molecules (using the `rdkit` library), we might be able to make predictions by using a convolutional neural network to extract these polar features from the image.
+
+This project has two files: A `utils.py` file that contains code for generating images of the polar charge density and applying other data preprocessing, and a `main.py` file that contains the code that implements both a `torch.utils.Dataset.DataLoader` object and a CNN.
